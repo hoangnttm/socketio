@@ -9,8 +9,15 @@
           $(document).ready(()=>{
             let socket = io.connect();
             socket.on('SERVER_REPLY',msg=>{
+              $('#id-ul').append(`<li>${msg}</li>`)
               console.log(msg);
             });
+            $('#signup').click(()=>{
+              let user=$('#txt-user').val()
+              socket.emit('NEW_USERNAME',user)//Gửi message cho server ( có 2 biến (CLIENT_SEND_MESSAGE là message điều hướng, sau đó là giá trị data muốn gửi đi))
+              $('#txt-user').hide();
+                $('#signup').hide();
+            })
             $('#send').click(()=>{
               let msg=$('#txt-msg').val()
               socket.emit('CLIENT_SEND_MESSAGE',msg)//Gửi message cho server ( có 2 biến (CLIENT_SEND_MESSAGE là message điều hướng, sau đó là giá trị data muốn gửi đi))
@@ -21,7 +28,13 @@
   </head>
   <body>
  <h1>SOCKET IO TRANNING</h1>
+ <input type="text" id="txt-user" placeholder="Enter your name">
+ <button id="signup">Sign Up</button>
+ <br></br>
  <input type="text" id="txt-msg" placeholder="Enter your message">
  <button id="send">Send</button>
+ <ul id='id-ul'>
+
+ </ul>
   </body>
 </html>
