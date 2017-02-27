@@ -1,0 +1,27 @@
+{
+  "name": "socketio",
+  "version": "1.0.0",
+  "description": "bai hoc ve socketio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangnttm/socketio.git"
+  },
+  "keywords": [
+    "socketio"
+  ],
+  "author": "hoangnttm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangnttm/socketio/issues"
+  },
+  "homepage": "https://github.com/hoangnttm/socketio#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "socket.io": "^1.7.3"
+  }
+}
